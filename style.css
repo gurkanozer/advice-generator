@@ -27,15 +27,6 @@ p{
     font-size: clamp(1.5rem, 1.429rem + 0.3vw, 1.75rem);
     text-align: center;
     margin-bottom: 24px;
-    /* 
-    24px 1.5rem
-    28px 1.75rem
-    375px 23.438
-    1440px 90
-    slope = (1.75 - 1.5) / (33.75 - 23.438) = 0.003
-    yAxis = -23.438 * 0.003 + 1.5 = 1.429
-    pref = 1.429 * 0.003 px + 0.003 * 100 vw   
-    */
 }
 h1{
     position:absolute;
