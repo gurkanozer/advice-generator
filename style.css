@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root{
+    --color-light-cyan:#cee3e9;
+    --color-neon-green:#52ffa8;
+    --color-grayish-blue: #4e5d73;
+    --color-dark-grayish-blue:#323a49;
+    --color-dark-blue:#1f2632;
+}   
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--color-dark-blue);
+}
+main{
+    width:100%;
+    height:100%;
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    color:var(--color-light-cyan);
+    font-size: clamp(1.5rem, 1.429rem + 0.3vw, 1.75rem);
+    text-align: center;
+    margin-bottom: 24px;
+    /* 
+    24px 1.5rem
+    28px 1.75rem
+    375px 23.438
+    1440px 90
+    slope = (1.75 - 1.5) / (33.75 - 23.438) = 0.003
+    yAxis = -23.438 * 0.003 + 1.5 = 1.429
+    pref = 1.429 * 0.003 px + 0.003 * 100 vw   
+    */
+}
+h1{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+
+}
+h2{
+  font-size:12px;
+  color:var(--color-neon-green); 
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.card-container{
+    position:relative;
+    width:100%;
+    max-width:572px;
+    min-height: 332px;
+    padding:16px;
+}
+.card{
+    position: absolute;
+    top:0;
+    left:16px;
+    width:calc(100% - 32px);
+    height:100%;
+    background: var(--color-dark-grayish-blue);
+    border-radius: 12px;
+    padding:48px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card .pattern-divider{
+    background: url(./images/pattern-divider-mobile.svg) no-repeat center center;
+    background-size: contain;
+    width:100%;
+    height:100%;
+}
+.current{
+    opacity: 1;
+    z-index: 20;
+}
+.previous{
+    opacity:0;
+    z-index:10;
+}
+.fadeIn{
+    animation: fadeIn 2s;
+}
+.fadeOut{
+    animation: fadeOut 2s;
+}
+.btn{
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    z-index: 30;
+    cursor: pointer;
+    background:#52ffa8;
+    width:64px;
+    height:64px;
+    border:none;
+    border-radius: 100%;
+}
+
+@media screen and (min-width:620px){
+    .card{
+        padding:48px;
+    }
+    .card .pattern-divider{
+        background: url(./images/pattern-divider-desktop.svg) no-repeat center center;
+
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(20%) scale(0.8);
+
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
