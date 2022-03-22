@@ -27,7 +27,7 @@ const initCard = (slip)=>{
     card.classList = "card current fadeIn";
     card.innerHTML = `
         <h2>Advice #${slip.id}</h2>
-        <p>${slip.advice}</p>
+        <p>"${slip.advice}"</p>
         <div class="pattern-divider"></div>
     `
     container.appendChild(card);
@@ -41,7 +41,7 @@ const newAdvice = (cards) => {
         const prev = document.querySelector(".previous");
         prev.innerHTML=`
         <h2>Advice #${slip.id}</h2>
-        <p>${slip.advice}</p>
+        <p>"${slip.advice}"</p>
         <div class="pattern-divider"></div>
     `
     }).then(res=>{

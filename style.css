@@ -101,13 +101,24 @@ h2{
     transform: translateX(-50%) translateY(50%);
     z-index: 30;
     cursor: pointer;
-    background:#52ffa8;
+    background: url(./images/icon-dice.svg) no-repeat center center;
+    background-size: 50%;
+    background-color:#52ffa8;
     width:64px;
     height:64px;
     border:none;
     border-radius: 100%;
+    transition: .3s ease;
 }
-
+.btn:hover{
+    transition: .3s ease;
+    transform: translateX(-50%) translateY(50%) scale(0.95) rotate(180deg);
+    box-shadow: 0px 0px 40px -4px rgba(82,255,168,1);
+}
+.btn:disabled{
+    background-color: var(--color-grayish-blue);
+    box-shadow: none!important;
+}
 @media screen and (min-width:620px){
     .card{
         padding:48px;
